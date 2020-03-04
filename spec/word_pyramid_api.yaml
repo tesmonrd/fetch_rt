@@ -1,0 +1,29 @@
+swagger: "2.0"
+
+info:
+  title: "Word Pyramid API Doc"
+  version: "1.0"
+
+paths:
+  /word_pyramid/{pyramid_word}:
+    get:
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+      parameters:
+        - name: pyramid_word
+          in: path
+          required: true
+          type: string
+          format: path
+
+definitions:
+  word:
+    type: string
+    properties:
+      id:
+        type: integer
+        format: int64
+      name: { type: string }
