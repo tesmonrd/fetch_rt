@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, render_template
+from werkzeug.exceptions import BadRequest, BadGateway
 from word_pyramid.word_pyramid import process_word
 
 app = Flask(__name__)
@@ -12,13 +13,13 @@ def word_handler():
             resp = process_word(req)
             return resp
         else:
-            #raise 400 error for improper data format
-            return jsonify(
-                response="Data passed incorrectly. Ensure you entered using the format '/pyramid-word?word=<your word>'"
-            )
+            raise BadRequest("Data passed incorrectly. Ensure you entered using the format '/pyramid-word?word=***'")
     except Exception as e:
-        return e
+        raise BadRequest("Encountered server error:{}".format(e))
 
+@app.route('/')
+def ui_option():
+    return render_template('form.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=9090)

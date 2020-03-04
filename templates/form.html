@@ -1,0 +1,11 @@
+{# fetch_rt/templates/form.html #}
+
+{% extends "base.html" %}
+{% block body %}
+<form action="{{ url_for('word_handler') }}" method="get">
+    <label>Enter your word</label>
+    <input type="text" id="word">
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    <input type="submit" name="Check My Word">
+</form>
+{% endblock %}
