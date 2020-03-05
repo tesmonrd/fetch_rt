@@ -1,4 +1,4 @@
-Rick Tesmond's Pyramid Word Analyzer
+*Rick Tesmond's Pyramid Word Analyzer*
 
 3/4/2020
 
@@ -11,7 +11,7 @@ Running the service:
 0) create a venv and import the packages from requirements.txt
 1) from your command line, run 'python app.py'
 2) query the endpoint using curl
-  ex. curl http://<your local host>:9090/pyramid-word?word=<your word>
+  ex. curl http://your_local_host:9090/pyramid-word?word=your_word
 
 You will be returned a json response indicating whether the word is or is not a pyramid word!
 
@@ -25,4 +25,5 @@ Example response if it is a pyramid:
 If it is not a pyramid, some error occurs, or invalid characters are passed, you will be returned a corresponding error message.
 
 **Bonus**
-If you aren't well versed in curl, I also created a GUI for this process. Simply browse to 'http://<your local host>:9090/' and use the GUI!
+
+If you aren't well versed in curl, I also created a GUI for this process. Simply browse to 'http://your local host:9090/' and use the GUI!
