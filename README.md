@@ -1,4 +1,4 @@
-*Rick Tesmond's Pyramid Word Analyzer*
+**Rick Tesmond's Pyramid Word Analyzer**
 
 3/4/2020
 
@@ -26,4 +26,4 @@ If it is not a pyramid, some error occurs, or invalid characters are passed, you
 
 **Bonus**
 
-If you aren't well versed in curl, I also created a GUI for this process. Simply browse to 'http://your local host:9090/' and use the GUI!
+If you aren't well versed in curl, I also created a GUI for this process. Simply browse to 'http://your_local_host:9090/' and use the GUI!
