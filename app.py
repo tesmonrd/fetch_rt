@@ -36,4 +36,4 @@ def form_handler():
 
 
 if __name__ == '__main__':
-	app.run(debug=True, port=9090)
+	app.run(debug=False, port=9090)
