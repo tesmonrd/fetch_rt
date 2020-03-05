@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RT's Pyramid Word</title>
+</head>
+<body>
+<h2>Welcome to Rick T's Word Pyramid Analyzer</h2>
+<h4>Here are two methods to check your words:</h4>
+<ul>
+    <li>Use CURL to query the endpoint:</li>
+    	<ul><li>curl http://*yourlocalhost*:9090/pyramid-word?word=*enter your word*</li></ul>
+    <li>Use the form below to check:</li>
+</ul>
+{% block body %}
+{% endblock %}
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $('input#word').submit(function() {
+            $.getJSON('/process_word',
+                function(data) {
+            });
+            return false;
+          });
+        });
+</script>
+</html>

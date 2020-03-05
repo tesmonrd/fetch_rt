@@ -1,0 +1,15 @@
+{# fetch_rt/templates/form.html #}
+
+{% extends "base.html" %}
+{% block body %}
+<form id="wordform" action="{{ url_for('form_handler') }}" method="get">
+    <label>Enter your word</label>
+    <input type="text" name="word">
+    <input type="submit">
+</form>
+{% if message %}
+<div id="status">
+	<h4>{{ message }}</h4>
+</div>
+{% endif %}
+{% endblock %}
