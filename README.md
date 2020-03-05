@@ -10,7 +10,7 @@ Running the service:
 
 0) create a venv and import the packages from requirements.txt
 1) from your command line, run 'python app.py'
-2) query the endpoint using curl
+2) query the endpoint using curl (replacing 'your_local_host' and 'your_word' with your local host and the word to test)
   ex. curl http://your_local_host:9090/pyramid-word?word=your_word
 
 You will be returned a json response indicating whether the word is or is not a pyramid word!
