@@ -2,10 +2,14 @@
 
 {% extends "base.html" %}
 {% block body %}
-<form action="{{ url_for('word_handler') }}" method="get">
+<form id="wordform" action="{{ url_for('form_handler') }}" method="get">
     <label>Enter your word</label>
-    <input type="text" id="word">
-    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
-    <input type="submit" name="Check My Word">
+    <input type="text" name="word">
+    <input type="submit">
 </form>
+{% if message %}
+<div id="status">
+	<h4>{{ message }}</h4>
+</div>
+{% endif %}
 {% endblock %}

@@ -6,6 +6,8 @@ def process_word(pyramid_word):
 	if pyramid_word.isalpha():
 		_letter_data = list(Counter(pyramid_word.lower()).items())
 		ordered_letters = sorted(_letter_data, key=lambda x: x[1])
+		if ordered_letters[0][1] != 1 or len(ordered_letters) == 1:
+			return build_resp("NOT A PYRAMID: Word only contains one unique letter", 200)
 		for i in range(len(ordered_letters)):
 			try:
 				if ordered_letters[i][1]+1 == ordered_letters[i+1][1]:
