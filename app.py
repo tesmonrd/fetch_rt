@@ -1,9 +1,16 @@
 import json
 from flask import Flask, request, render_template
 from werkzeug.exceptions import BadRequest, BadGateway
-from word_pyramid.word_pyramid import process_word
+try:
+	from word_pyramid.word_pyramid import process_word
+except ModuleNotFoundError:
+	from .word_pyramid.word_pyramid import process_word
 
 app = Flask(__name__)
+
+
+def create_app(app):
+	return app
 
 
 @app.route('/pyramid-word', methods=['GET'])
